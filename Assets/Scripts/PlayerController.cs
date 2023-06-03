@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +9,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody m_PlayerRb;
     [SerializeField] private AnimationController m_AnimationController;
     [SerializeField] private ParticleSystem m_DirtParticleSystem;
+    [SerializeField] private ParticleSystem m_SmokeParticleSystem;
+    [SerializeField] private AudioController m_AudioController;
 
     [Header("Controls")]
     [SerializeField] private KeyCode m_JumpKey;
     [SerializeField, Range(1, 10)] private float m_JumpForce;
 
     public event Action OnBrushCollected;
+    public event Action OnGameOver;
+
+    public static PlayerController Instance { get; private set; }
+    public bool IsGameOver { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -35,29 +53,50 @@ public class PlayerController : MonoBehaviour
             m_PlayerRb.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
 
             m_AnimationController.Jump();
+            m_AudioController.PlayJumpSound();
             m_DirtParticleSystem.Stop();
-
-            // Needs adding jump animation, VFX and sounds
-
         }
     }
 
     private void OnCollisionEnter(Collision collision)
-    { 
-        if (!collision.gameObject.TryGetComponent<ObjectController>(out ObjectController obstacleController))
+    {
+         if (!collision.gameObject.TryGetComponent<ObjectType>(out ObjectType objectType))
         {
             // If not colliding with the spawn means Player is on the ground
             m_DirtParticleSystem.Play();
         }
-        else if (obstacleController.SpawnObjectType == ESpawnObjectType.Obstacle)
+        else if (objectType.SpawnObjectType == ESpawnObjectType.Obstacle)
         {
-            // Raise a gameover event
-            Debug.Log("Gameover");
+            EndGame();
         }
-        else if (obstacleController.SpawnObjectType == ESpawnObjectType.Brush)
+        else if (objectType.SpawnObjectType == ESpawnObjectType.Brush)
         {
+            m_AudioController.PlayBrushCollectedSound();
             Destroy(collision.gameObject);
             OnBrushCollected();
+        }
+    }
+
+    private void EndGame()
+    {
+        IsGameOver = true;
+        OnGameOver();
+
+        m_SmokeParticleSystem.Play();
+        m_AudioController.PlayDieSound();
+        
+        m_DirtParticleSystem.Stop();
+        m_AnimationController.Die();
+        m_AudioController.TurnOffSound();
+
+        Physics.gravity /= 2;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
         }
     }
 }

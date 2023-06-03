@@ -8,8 +8,6 @@ public class BackgroundScroller : MonoBehaviour
     [SerializeField] private List<GameObject> m_AllBackgrounds;
     [SerializeField, Range(5, 25)] private float m_Speed;
 
-    [SerializeField] private PlayerController m_PlayerController;
-
     private GameObject m_CurrentBackground;
     private GameObject m_LastBackground;
     private Vector3 m_StartPos;
@@ -26,8 +24,11 @@ public class BackgroundScroller : MonoBehaviour
         m_StartPos = transform.position;
         m_RepeatWidth = m_BoxCollider.size.x / 2;
 
-        m_PlayerController.OnBrushCollected += OnBrushCollected;
-    }
+        StartCoroutine(KeepScrolling());
+
+        PlayerController.Instance.OnBrushCollected += OnBrushCollected;
+        PlayerController.Instance.OnGameOver += OnGameOver;
+    }  
 
     private void OnBrushCollected()
     {
@@ -53,21 +54,27 @@ public class BackgroundScroller : MonoBehaviour
         }
     }
 
-
-    void Update()
+    private IEnumerator KeepScrolling()
     {
-        // Keep scrolling endlessly
-        Vector3 deltaOffset = m_Speed * Time.deltaTime * Vector3.left;
-        transform.position += deltaOffset;
-
-        if (transform.position.x < m_StartPos.x - m_RepeatWidth)
+        while (true)
         {
-            transform.position = m_StartPos;
+            // Keep scrolling endlessly
+            Vector3 deltaOffset = m_Speed * Time.deltaTime * Vector3.left;
+            transform.position += deltaOffset;
+
+            if (transform.position.x < m_StartPos.x - m_RepeatWidth)
+            {
+                transform.position = m_StartPos;
+            }
+
+            yield return null;
         }
     }
 
-    private void OnDestroy()
+    private void OnGameOver()
     {
-        m_PlayerController.OnBrushCollected -= OnBrushCollected;
+        StopAllCoroutines();
+        PlayerController.Instance.OnBrushCollected -= OnBrushCollected;
+        PlayerController.Instance.OnGameOver -= OnGameOver;
     }
 }

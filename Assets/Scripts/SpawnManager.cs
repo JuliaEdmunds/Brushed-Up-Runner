@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -6,31 +7,30 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<ObjectController> m_Obstacles;
     [SerializeField] private ObjectController m_Brush;
 
-    // Tweak the values
-    private float m_SpawnDelay = 2;
-    private float m_SpawnInterval = 2.5f;
-
     private void Start()
     {
-        InvokeRepeating(nameof(SpawnObstacles), m_SpawnDelay, m_SpawnInterval);
+        PlayerController.Instance.OnGameOver += OnGameOver;
 
-        //Make brush spawns less frequent & more rabdom
-        float brushSpawnDelay = m_SpawnDelay + 2.5f;
-
-        Invoke(nameof(SpawnBrush), brushSpawnDelay);
+        StartCoroutine(SpawnObstacle());
+        StartCoroutine(SpawnBrush());
     }
 
-    private void SpawnObstacles()
+    private IEnumerator SpawnObstacle()
     {
         Vector3 spawnPos = new(10, 0, 0);
+        float spawnInterval = Random.Range(1.5f, 3.5f);
 
         // TODO: Make sure to stop spawning if gameOver
         int obstacleIndex = Random.Range(0, m_Obstacles.Count);
         GameObject currentObstacle = m_Obstacles[obstacleIndex].gameObject;
         Instantiate(currentObstacle, spawnPos, currentObstacle.transform.rotation);
+
+        yield return new WaitForSeconds(spawnInterval);
+
+        yield return SpawnObstacle();
     }
 
-    private void SpawnBrush()
+    private IEnumerator SpawnBrush()
     {
         float spawnInterval = Random.Range(3, 10);
         float xPos = 10f;
@@ -42,7 +42,15 @@ public class SpawnManager : MonoBehaviour
 
         Instantiate(m_Brush, spawnPos, m_Brush.transform.rotation);
 
-        Invoke(nameof(SpawnBrush), spawnInterval);
+        yield return new WaitForSeconds(spawnInterval);
+
+        yield return SpawnBrush();  
+    }
+
+    private void OnGameOver()
+    {
+        StopAllCoroutines();
+        PlayerController.Instance.OnGameOver -= OnGameOver;
     }
 }
 

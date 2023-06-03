@@ -14,14 +14,9 @@ public class AnimationController : MonoBehaviour
         m_Animator.SetTrigger("Jump");
     }
 
-    public void StopRunning()
-    {
-
-    }
-
     public void Die()
     {
-
+        m_Animator.SetBool("IsDead", true);
     }
 }
 
