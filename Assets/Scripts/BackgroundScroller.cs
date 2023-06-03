@@ -11,6 +11,7 @@ public class BackgroundScroller : MonoBehaviour
     [SerializeField] private PlayerController m_PlayerController;
 
     private GameObject m_CurrentBackground;
+    private GameObject m_LastBackground;
     private Vector3 m_StartPos;
     private float m_RepeatWidth;
 
@@ -18,6 +19,8 @@ public class BackgroundScroller : MonoBehaviour
     void Start()
     {
         m_CurrentBackground = m_AllBackgrounds[0];
+        m_LastBackground = m_CurrentBackground;
+
         m_CurrentBackground.SetActive(true);
 
         m_StartPos = transform.position;
@@ -28,13 +31,29 @@ public class BackgroundScroller : MonoBehaviour
 
     private void OnBrushCollected()
     {
-        //Hardcoded value for testing
+        //Disable old bg and replace with a new one
         m_CurrentBackground.SetActive(false);
-        m_CurrentBackground = m_AllBackgrounds[1];
+        ChooseBackground();
         m_CurrentBackground.SetActive(true);
     }
 
-    // Update is called once per frame
+    private void ChooseBackground()
+    {
+        int index = Random.Range(0, m_AllBackgrounds.Count);
+        m_CurrentBackground = m_AllBackgrounds[index];
+
+        // Keep the last background check to make sure we're not switching to the same one
+        if (m_LastBackground == m_CurrentBackground)
+        {
+            ChooseBackground();
+        }
+        else
+        {
+            m_LastBackground = m_CurrentBackground;
+        }
+    }
+
+
     void Update()
     {
         // Keep scrolling endlessly

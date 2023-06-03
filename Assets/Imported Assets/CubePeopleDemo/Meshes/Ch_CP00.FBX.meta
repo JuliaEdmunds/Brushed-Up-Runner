@@ -1,118 +1,332 @@
 fileFormatVersion: 2
 guid: afb4f7eac1239eb438139d748b6aea07
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Bip001
-    100002: Bip001 Head
-    100004: Bip001 L Calf
-    100006: Bip001 L Clavicle
-    100008: Bip001 L Foot
-    100010: Bip001 L Forearm
-    100012: Bip001 L Hand
-    100014: Bip001 L Thigh
-    100016: Bip001 L Toe0
-    100018: Bip001 L UpperArm
-    100020: Bip001 Neck
-    100022: Bip001 Pelvis
-    100024: Bip001 R Calf
-    100026: Bip001 R Clavicle
-    100028: Bip001 R Foot
-    100030: Bip001 R Forearm
-    100032: Bip001 R Hand
-    100034: Bip001 R Thigh
-    100036: Bip001 R Toe0
-    100038: Bip001 R UpperArm
-    100040: Bip001 Spine
-    100042: Bip001 Spine1
-    100044: Ch_Cm00_Bottom00
-    100046: Ch_Cm00_Head00
-    100048: Ch_Cm00_Top00
-    100050: //RootNode
-    100052: Bip001HeadContainer
-    100054: Bip001HeadContainer001
-    100056: Bip001HeadContainer002
-    100058: Bip001HeadContainer003
-    100060: Ch_CPF00_Bottom00
-    100062: Ch_CPF00_Head00
-    100064: Ch_CPF00_Top00
-    100066: Ch_CPM00_Bottom00
-    100068: Ch_CPM00_Head00
-    100070: Ch_CPM00_Top00
-    100072: Bip001 ContainerBack
-    100074: Bip001 ContainerHandL
-    100076: Bip001 ContainerHandR
-    100078: Bip001 ContainerHead
-    400000: Bip001
-    400002: Bip001 Head
-    400004: Bip001 L Calf
-    400006: Bip001 L Clavicle
-    400008: Bip001 L Foot
-    400010: Bip001 L Forearm
-    400012: Bip001 L Hand
-    400014: Bip001 L Thigh
-    400016: Bip001 L Toe0
-    400018: Bip001 L UpperArm
-    400020: Bip001 Neck
-    400022: Bip001 Pelvis
-    400024: Bip001 R Calf
-    400026: Bip001 R Clavicle
-    400028: Bip001 R Foot
-    400030: Bip001 R Forearm
-    400032: Bip001 R Hand
-    400034: Bip001 R Thigh
-    400036: Bip001 R Toe0
-    400038: Bip001 R UpperArm
-    400040: Bip001 Spine
-    400042: Bip001 Spine1
-    400044: Ch_Cm00_Bottom00
-    400046: Ch_Cm00_Head00
-    400048: Ch_Cm00_Top00
-    400050: //RootNode
-    400052: Bip001HeadContainer
-    400054: Bip001HeadContainer001
-    400056: Bip001HeadContainer002
-    400058: Bip001HeadContainer003
-    400060: Ch_CPF00_Bottom00
-    400062: Ch_CPF00_Head00
-    400064: Ch_CPF00_Top00
-    400066: Ch_CPM00_Bottom00
-    400068: Ch_CPM00_Head00
-    400070: Ch_CPM00_Top00
-    400072: Bip001 ContainerBack
-    400074: Bip001 ContainerHandL
-    400076: Bip001 ContainerHandR
-    400078: Bip001 ContainerHead
-    2100000: 11 - Default
-    2100002: 09 - Default
-    2100004: 10 - Default
-    2300000: Ch_Cm00_Bottom00
-    2300002: Ch_CPM00_Bottom00
-    3300000: Ch_Cm00_Bottom00
-    3300002: Ch_CPM00_Bottom00
-    4300000: Ch_Cm00_Bottom00
-    4300002: Ch_Cm00_Head00
-    4300004: Ch_Cm00_Top00
-    4300006: Ch_CPM00_Bottom00
-    4300008: Ch_CPM00_Head00
-    4300010: Ch_CPM00_Top00
-    4300012: Ch_CPF00_Top00
-    4300014: Ch_CPF00_Head00
-    4300016: Ch_CPF00_Bottom00
-    9500000: //RootNode
-    13700000: Ch_Cm00_Bottom00
-    13700002: Ch_Cm00_Head00
-    13700004: Ch_Cm00_Top00
-    13700006: Ch_CPF00_Bottom00
-    13700008: Ch_CPF00_Head00
-    13700010: Ch_CPF00_Top00
-    13700012: Ch_CPM00_Head00
-    13700014: Ch_CPM00_Top00
-    13700016: Ch_CPM00_Bottom00
-    2186277476908879412: ImportLogs
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bip001
+  - first:
+      1: 100002
+    second: Bip001 Head
+  - first:
+      1: 100004
+    second: Bip001 L Calf
+  - first:
+      1: 100006
+    second: Bip001 L Clavicle
+  - first:
+      1: 100008
+    second: Bip001 L Foot
+  - first:
+      1: 100010
+    second: Bip001 L Forearm
+  - first:
+      1: 100012
+    second: Bip001 L Hand
+  - first:
+      1: 100014
+    second: Bip001 L Thigh
+  - first:
+      1: 100016
+    second: Bip001 L Toe0
+  - first:
+      1: 100018
+    second: Bip001 L UpperArm
+  - first:
+      1: 100020
+    second: Bip001 Neck
+  - first:
+      1: 100022
+    second: Bip001 Pelvis
+  - first:
+      1: 100024
+    second: Bip001 R Calf
+  - first:
+      1: 100026
+    second: Bip001 R Clavicle
+  - first:
+      1: 100028
+    second: Bip001 R Foot
+  - first:
+      1: 100030
+    second: Bip001 R Forearm
+  - first:
+      1: 100032
+    second: Bip001 R Hand
+  - first:
+      1: 100034
+    second: Bip001 R Thigh
+  - first:
+      1: 100036
+    second: Bip001 R Toe0
+  - first:
+      1: 100038
+    second: Bip001 R UpperArm
+  - first:
+      1: 100040
+    second: Bip001 Spine
+  - first:
+      1: 100042
+    second: Bip001 Spine1
+  - first:
+      1: 100044
+    second: Ch_Cm00_Bottom00
+  - first:
+      1: 100046
+    second: Ch_Cm00_Head00
+  - first:
+      1: 100048
+    second: Ch_Cm00_Top00
+  - first:
+      1: 100050
+    second: //RootNode
+  - first:
+      1: 100052
+    second: Bip001HeadContainer
+  - first:
+      1: 100054
+    second: Bip001HeadContainer001
+  - first:
+      1: 100056
+    second: Bip001HeadContainer002
+  - first:
+      1: 100058
+    second: Bip001HeadContainer003
+  - first:
+      1: 100060
+    second: Ch_CPF00_Bottom00
+  - first:
+      1: 100062
+    second: Ch_CPF00_Head00
+  - first:
+      1: 100064
+    second: Ch_CPF00_Top00
+  - first:
+      1: 100066
+    second: Ch_CPM00_Bottom00
+  - first:
+      1: 100068
+    second: Ch_CPM00_Head00
+  - first:
+      1: 100070
+    second: Ch_CPM00_Top00
+  - first:
+      1: 100072
+    second: Bip001 ContainerBack
+  - first:
+      1: 100074
+    second: Bip001 ContainerHandL
+  - first:
+      1: 100076
+    second: Bip001 ContainerHandR
+  - first:
+      1: 100078
+    second: Bip001 ContainerHead
+  - first:
+      4: 400000
+    second: Bip001
+  - first:
+      4: 400002
+    second: Bip001 Head
+  - first:
+      4: 400004
+    second: Bip001 L Calf
+  - first:
+      4: 400006
+    second: Bip001 L Clavicle
+  - first:
+      4: 400008
+    second: Bip001 L Foot
+  - first:
+      4: 400010
+    second: Bip001 L Forearm
+  - first:
+      4: 400012
+    second: Bip001 L Hand
+  - first:
+      4: 400014
+    second: Bip001 L Thigh
+  - first:
+      4: 400016
+    second: Bip001 L Toe0
+  - first:
+      4: 400018
+    second: Bip001 L UpperArm
+  - first:
+      4: 400020
+    second: Bip001 Neck
+  - first:
+      4: 400022
+    second: Bip001 Pelvis
+  - first:
+      4: 400024
+    second: Bip001 R Calf
+  - first:
+      4: 400026
+    second: Bip001 R Clavicle
+  - first:
+      4: 400028
+    second: Bip001 R Foot
+  - first:
+      4: 400030
+    second: Bip001 R Forearm
+  - first:
+      4: 400032
+    second: Bip001 R Hand
+  - first:
+      4: 400034
+    second: Bip001 R Thigh
+  - first:
+      4: 400036
+    second: Bip001 R Toe0
+  - first:
+      4: 400038
+    second: Bip001 R UpperArm
+  - first:
+      4: 400040
+    second: Bip001 Spine
+  - first:
+      4: 400042
+    second: Bip001 Spine1
+  - first:
+      4: 400044
+    second: Ch_Cm00_Bottom00
+  - first:
+      4: 400046
+    second: Ch_Cm00_Head00
+  - first:
+      4: 400048
+    second: Ch_Cm00_Top00
+  - first:
+      4: 400050
+    second: //RootNode
+  - first:
+      4: 400052
+    second: Bip001HeadContainer
+  - first:
+      4: 400054
+    second: Bip001HeadContainer001
+  - first:
+      4: 400056
+    second: Bip001HeadContainer002
+  - first:
+      4: 400058
+    second: Bip001HeadContainer003
+  - first:
+      4: 400060
+    second: Ch_CPF00_Bottom00
+  - first:
+      4: 400062
+    second: Ch_CPF00_Head00
+  - first:
+      4: 400064
+    second: Ch_CPF00_Top00
+  - first:
+      4: 400066
+    second: Ch_CPM00_Bottom00
+  - first:
+      4: 400068
+    second: Ch_CPM00_Head00
+  - first:
+      4: 400070
+    second: Ch_CPM00_Top00
+  - first:
+      4: 400072
+    second: Bip001 ContainerBack
+  - first:
+      4: 400074
+    second: Bip001 ContainerHandL
+  - first:
+      4: 400076
+    second: Bip001 ContainerHandR
+  - first:
+      4: 400078
+    second: Bip001 ContainerHead
+  - first:
+      21: 2100000
+    second: 11 - Default
+  - first:
+      21: 2100002
+    second: 09 - Default
+  - first:
+      21: 2100004
+    second: 10 - Default
+  - first:
+      23: 2300000
+    second: Ch_Cm00_Bottom00
+  - first:
+      23: 2300002
+    second: Ch_CPM00_Bottom00
+  - first:
+      33: 3300000
+    second: Ch_Cm00_Bottom00
+  - first:
+      33: 3300002
+    second: Ch_CPM00_Bottom00
+  - first:
+      43: 4300000
+    second: Ch_Cm00_Bottom00
+  - first:
+      43: 4300002
+    second: Ch_Cm00_Head00
+  - first:
+      43: 4300004
+    second: Ch_Cm00_Top00
+  - first:
+      43: 4300006
+    second: Ch_CPM00_Bottom00
+  - first:
+      43: 4300008
+    second: Ch_CPM00_Head00
+  - first:
+      43: 4300010
+    second: Ch_CPM00_Top00
+  - first:
+      43: 4300012
+    second: Ch_CPF00_Top00
+  - first:
+      43: 4300014
+    second: Ch_CPF00_Head00
+  - first:
+      43: 4300016
+    second: Ch_CPF00_Bottom00
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Ch_Cm00_Bottom00
+  - first:
+      137: 13700002
+    second: Ch_Cm00_Head00
+  - first:
+      137: 13700004
+    second: Ch_Cm00_Top00
+  - first:
+      137: 13700006
+    second: Ch_CPF00_Bottom00
+  - first:
+      137: 13700008
+    second: Ch_CPF00_Head00
+  - first:
+      137: 13700010
+    second: Ch_CPF00_Top00
+  - first:
+      137: 13700012
+    second: Ch_CPM00_Head00
+  - first:
+      137: 13700014
+    second: Ch_CPM00_Top00
+  - first:
+      137: 13700016
+    second: Ch_CPM00_Bottom00
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -121,6 +335,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
@@ -147,25 +362,34 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -174,10 +398,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 0
-  copyAvatar: 0
+  referencedClips: []
+  importAnimation: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: Bip001 Pelvis
       humanName: Hips
@@ -520,13 +744,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 1
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

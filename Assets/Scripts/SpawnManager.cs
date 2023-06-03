@@ -3,24 +3,46 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] private List<SpawnObjectController> m_ObstacleControllers;
+    [SerializeField] private List<ObjectController> m_Obstacles;
+    [SerializeField] private ObjectController m_Brush;
 
-    // Remove from inspecotr after deciding on the final values
-    [SerializeField] private Vector3 m_SpawnPos = new(10, 0, 0);
-    [SerializeField] private float m_SpawnDelay = 2;
-    [SerializeField] private float m_SpawnInterval = 2.5f;
+    // Tweak the values
+    private float m_SpawnDelay = 2;
+    private float m_SpawnInterval = 2.5f;
 
-    void Start()
+    private void Start()
     {
         InvokeRepeating(nameof(SpawnObstacles), m_SpawnDelay, m_SpawnInterval);
+
+        //Make brush spawns less frequent & more rabdom
+        float brushSpawnDelay = m_SpawnDelay + 2.5f;
+
+        Invoke(nameof(SpawnBrush), brushSpawnDelay);
     }
 
-    void SpawnObstacles()
+    private void SpawnObstacles()
     {
+        Vector3 spawnPos = new(10, 0, 0);
+
         // TODO: Make sure to stop spawning if gameOver
-        int obstacleIndex = Random.Range(0, m_ObstacleControllers.Count);
-        GameObject currentObstacle = m_ObstacleControllers[obstacleIndex].gameObject;
-        Instantiate(currentObstacle, m_SpawnPos, currentObstacle.transform.rotation);
+        int obstacleIndex = Random.Range(0, m_Obstacles.Count);
+        GameObject currentObstacle = m_Obstacles[obstacleIndex].gameObject;
+        Instantiate(currentObstacle, spawnPos, currentObstacle.transform.rotation);
+    }
+
+    private void SpawnBrush()
+    {
+        float spawnInterval = Random.Range(3, 10);
+        float xPos = 10f;
+        float minYPos = 4.5f;
+        float maxYPos = 7.7f;
+
+        //Set the random pos for the brush
+        Vector3 spawnPos = new(xPos, Random.Range(minYPos, maxYPos), 0);
+
+        Instantiate(m_Brush, spawnPos, m_Brush.transform.rotation);
+
+        Invoke(nameof(SpawnBrush), spawnInterval);
     }
 }
 

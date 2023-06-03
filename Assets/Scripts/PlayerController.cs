@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player elements")]
     [SerializeField] private Rigidbody m_PlayerRb;
+    [SerializeField] private AnimationController m_AnimationController;
+    [SerializeField] private ParticleSystem m_DirtParticleSystem;
 
     [Header("Controls")]
     [SerializeField] private KeyCode m_JumpKey;
@@ -32,21 +34,22 @@ public class PlayerController : MonoBehaviour
         {
             m_PlayerRb.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
 
+            m_AnimationController.Jump();
+            m_DirtParticleSystem.Stop();
+
             // Needs adding jump animation, VFX and sounds
 
         }
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        SpawnObjectController obstacleController = collision.gameObject.GetComponent<SpawnObjectController>();
-
-        if (obstacleController == null)
+    { 
+        if (!collision.gameObject.TryGetComponent<ObjectController>(out ObjectController obstacleController))
         {
-            return;
+            // If not colliding with the spawn means Player is on the ground
+            m_DirtParticleSystem.Play();
         }
-
-        if (obstacleController.SpawnObjectType == ESpawnObjectType.Obstacle)
+        else if (obstacleController.SpawnObjectType == ESpawnObjectType.Obstacle)
         {
             // Raise a gameover event
             Debug.Log("Gameover");
@@ -55,6 +58,6 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             OnBrushCollected();
-        }   
+        }
     }
 }
