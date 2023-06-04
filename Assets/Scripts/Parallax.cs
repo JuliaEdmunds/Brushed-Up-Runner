@@ -27,7 +27,9 @@ public class Parallax : MonoBehaviour
 
             if (transform.position.x < m_StartPos.x - m_RepeatWidth)
             {
-                transform.position = m_StartPos;
+                Vector3 newPos = transform.position;
+                newPos.x += m_RepeatWidth;
+                transform.position = newPos;
             }
         }
     }

@@ -8,6 +8,10 @@ public class VisualManager : MonoBehaviour
 
     [Header("Gameplay")]
     [SerializeField] private TextMeshProUGUI m_ScoreText;
+    [SerializeField] private float m_StartTimeToIncrease;
+    [SerializeField] private float m_EndTimeToIncrease;
+    [SerializeField] private float m_StartTimeScale;
+    [SerializeField] private float m_EndTimeScale;
 
     [Header("Game Over")]
     [SerializeField] private GameObject m_GameOverScreen;
@@ -19,7 +23,7 @@ public class VisualManager : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1.0f;
+        Time.timeScale = m_StartTimeScale;
         PlayerController.Instance.OnGameOver += OnGameOver;
     }
 
@@ -39,13 +43,23 @@ public class VisualManager : MonoBehaviour
             }            
         }
 
-        if (m_GameTimer > 10)
+        if (m_GameTimer < m_StartTimeToIncrease)
         {
-            Time.timeScale = 1.2f;
+            Time.timeScale = m_StartTimeScale;
         }
-        else if (m_GameTimer > 30)
+        else if (m_GameTimer > m_EndTimeToIncrease)
         {
-            Time.timeScale = 1.4f;
+            Time.timeScale = m_EndTimeScale;
+        }
+        else
+        {
+            float timeRange = m_EndTimeToIncrease - m_StartTimeToIncrease;
+            float normalisedTimePassed = (m_GameTimer - m_StartTimeToIncrease) / timeRange;
+
+            float scaleRange = m_EndTimeScale - m_StartTimeScale;
+            float currentScaleValue = (scaleRange * normalisedTimePassed) + m_StartTimeScale;
+
+            Time.timeScale = currentScaleValue;
         }
     }
 

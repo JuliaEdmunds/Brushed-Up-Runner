@@ -3485,6 +3485,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ScoreText: {fileID: 389139268}
+  m_StartTimeToIncrease: 10
+  m_EndTimeToIncrease: 90
+  m_StartTimeScale: 1
+  m_EndTimeScale: 2.8
   m_GameOverScreen: {fileID: 1927828803}
   m_GameOverScoreText: {fileID: 834899102}
 --- !u!4 &1469035675
