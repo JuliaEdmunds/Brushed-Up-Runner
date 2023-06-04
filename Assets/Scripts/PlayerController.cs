@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class PlayerController : MonoBehaviour
     public bool IsGameOver { get; private set; }
 
     public int Score { get; private set; }
+
+    public bool IsNewBestScore { get; private set; }
+
+    private int m_JumpCounter = 0;
 
     private void Awake()
     {
@@ -47,16 +52,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Allow for easy reset in the testing mode
-        // TODO: remove on finish
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(m_JumpKey) && m_JumpCounter < 2 && !IsGameOver)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+            m_JumpCounter++;
 
-        if (Input.GetKeyDown(m_JumpKey))
-        {
-            m_PlayerRb.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
+            float currentJumpForce = m_JumpCounter == 2 ? (m_JumpForce * 0.75f) : m_JumpForce;
+
+            m_PlayerRb.AddForce(Vector3.up * currentJumpForce, ForceMode.Impulse);
 
             m_AnimationController.Jump();
             m_AudioController.PlayJumpSound();
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
          if (!collision.gameObject.TryGetComponent<ObjectType>(out ObjectType objectType))
         {
             // If not colliding with the spawn means Player is on the ground
+            m_JumpCounter = 0;
             m_DirtParticleSystem.Play();
         }
         else if (objectType.SpawnObjectType == ESpawnObjectType.Obstacle)
@@ -97,7 +100,6 @@ public class PlayerController : MonoBehaviour
         StopAllCoroutines();
 
         IsGameOver = true;
-        OnGameOver();
 
         m_SmokeParticleSystem.Play();
         m_AudioController.PlayDieSound();
@@ -106,12 +108,15 @@ public class PlayerController : MonoBehaviour
         m_AnimationController.Die();
         m_AudioController.TurnOffSound();
 
-        Physics.gravity /= 2;
+          Physics.gravity /= 2;
 
         if (Score > PlayerScoreHelper.GetBestScore())
         {
             PlayerScoreHelper.SetBestScore(Score);
+            IsNewBestScore = true;
         }
+
+        OnGameOver();
     }
 
     private void OnDestroy()
