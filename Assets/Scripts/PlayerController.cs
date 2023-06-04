@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public event Action OnGameOver;
 
     public static PlayerController Instance { get; private set; }
+    public static bool IsCreated => Instance != null;
+
     public bool IsGameOver { get; private set; }
 
     public int Score { get; private set; }
@@ -44,12 +43,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Score = 0;
-        Physics.gravity *= 2;
 
         StartCoroutine(UpdateScore());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(m_JumpKey) && m_JumpCounter < 2 && !IsGameOver)
@@ -89,6 +86,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (objectType.SpawnObjectType == ESpawnObjectType.Brush)
         {
+            Score += 5;
             m_AudioController.PlayBrushCollectedSound();
             Destroy(collision.gameObject);
             OnBrushCollected();
@@ -99,8 +97,6 @@ public class PlayerController : MonoBehaviour
     {
         StopAllCoroutines();
 
-        IsGameOver = true;
-
         m_SmokeParticleSystem.Play();
         m_AudioController.PlayDieSound();
         
@@ -108,14 +104,13 @@ public class PlayerController : MonoBehaviour
         m_AnimationController.Die();
         m_AudioController.TurnOffSound();
 
-          Physics.gravity /= 2;
-
         if (Score > PlayerScoreHelper.GetBestScore())
         {
             PlayerScoreHelper.SetBestScore(Score);
             IsNewBestScore = true;
         }
 
+        IsGameOver = true;
         OnGameOver();
     }
 

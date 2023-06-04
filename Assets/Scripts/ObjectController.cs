@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ObjectController : MonoBehaviour
 {
     [SerializeField] private ObjectType m_ObjectType;
 
-    private float m_Speed = 5f;
+    private float m_Speed = 7.5f;
     private float m_XBound = -20f;
 
 

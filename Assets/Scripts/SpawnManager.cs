@@ -54,7 +54,7 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnObstacle()
     {
-        float spawnInterval = Random.Range(1.5f, 3.5f);
+        float spawnInterval = Random.Range(1.5f, 2.5f);
 
         // TODO: Make sure to stop spawning if gameOver
         int obstacleIndex = Random.Range(0, m_Obstacles.Count);
@@ -80,13 +80,20 @@ public class SpawnManager : MonoBehaviour
 
         yield return new WaitForSeconds(spawnInterval);
 
-        yield return SpawnBrush();  
+        yield return SpawnBrush();
     }
 
     private void OnGameOver()
     {
         StopAllCoroutines();
-        PlayerController.Instance.OnGameOver -= OnGameOver;
+    }
+
+    private void OnDestroy()
+    {
+        if (PlayerController.IsCreated)
+        {
+            PlayerController.Instance.OnGameOver -= OnGameOver;
+        }
     }
 }
 

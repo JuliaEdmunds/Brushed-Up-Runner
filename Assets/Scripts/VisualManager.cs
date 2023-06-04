@@ -13,14 +13,18 @@ public class VisualManager : MonoBehaviour
 
     private float m_GameOverTimer = 0;
 
+    private float m_GameTimer = 0;
 
     private void Start()
     {
+        Time.timeScale = 1.0f;
         PlayerController.Instance.OnGameOver += OnGameOver;
     }
 
     private void Update()
     {
+        m_GameTimer += Time.unscaledDeltaTime;
+
         m_ScoreText.text = $"Score: {PlayerController.Instance.Score}";
 
         if (PlayerController.Instance.IsGameOver)
@@ -31,6 +35,15 @@ public class VisualManager : MonoBehaviour
             {
                 Replay();
             }            
+        }
+
+        if (m_GameTimer > 10)
+        {
+            Time.timeScale = 1.2f;
+        }
+        else if (m_GameTimer > 30)
+        {
+            Time.timeScale = 1.4f;
         }
     }
 
