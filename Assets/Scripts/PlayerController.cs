@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance { get; private set; }
     public bool IsGameOver { get; private set; }
 
+    public int Score { get; private set; }
+
     private void Awake()
     {
         if (Instance != null)
@@ -35,7 +38,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        Score = 0;
         Physics.gravity *= 2;
+
+        StartCoroutine(UpdateScore());
     }
 
     // Update is called once per frame
@@ -56,6 +62,15 @@ public class PlayerController : MonoBehaviour
             m_AudioController.PlayJumpSound();
             m_DirtParticleSystem.Stop();
         }
+    }
+
+    private IEnumerator UpdateScore()
+    {
+        yield return new WaitForSeconds(1);
+
+        Score += 1;
+
+        yield return UpdateScore();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -79,6 +94,8 @@ public class PlayerController : MonoBehaviour
 
     private void EndGame()
     {
+        StopAllCoroutines();
+
         IsGameOver = true;
         OnGameOver();
 
@@ -90,6 +107,11 @@ public class PlayerController : MonoBehaviour
         m_AudioController.TurnOffSound();
 
         Physics.gravity /= 2;
+
+        if (Score > PlayerScoreHelper.GetBestScore())
+        {
+            PlayerScoreHelper.SetBestScore(Score);
+        }
     }
 
     private void OnDestroy()
