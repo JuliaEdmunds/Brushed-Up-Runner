@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class VisualManager : MonoBehaviour
 {
+    private const string MENU_SCENE = "Menu";
+
     [Header("Gameplay")]
     [SerializeField] private TextMeshProUGUI m_ScoreText;
 
@@ -61,6 +63,11 @@ public class VisualManager : MonoBehaviour
     {
         m_GameOverScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(MENU_SCENE);
     }
 }
 
