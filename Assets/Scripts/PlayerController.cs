@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -47,9 +48,25 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(UpdateScore());
     }
 
+
     void Update()
     {
-        if (Input.GetKeyDown(m_JumpKey) && m_JumpCounter < 2 && !IsGameOver)
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+        if (Input.GetKeyDown(m_JumpKey))
+        {
+            TryJump();
+        }
+#else
+        if (Input.GetMouseButtonDown(0))
+        {
+            TryJump();
+        }
+#endif
+    }
+
+    private void TryJump()
+    {
+        if (m_JumpCounter < 2 && !IsGameOver)
         {
             m_JumpCounter++;
 

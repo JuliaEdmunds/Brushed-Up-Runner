@@ -23,9 +23,18 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator Tutorial()
     {
-        GameObject currentObject;
         //Spawn 1 bucekt
-        m_InstructionText.text = "Press Spacebar \r\nto jump";
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+        string instruction1 = "Press Spacebar \r\nto jump";
+        string instruction2 = "Press Spacebar twice \r\nto double jump";
+#else
+        string instruction1 = "Tap the screen \r\nto jump";
+        string instruction2 = "Tap twice \r\nto double jump";
+
+#endif
+        GameObject currentObject;
+
+        m_InstructionText.text = instruction1;
         m_InstructionPanel.SetActive(true);
         currentObject = m_Obstacles[0].gameObject;
         Instantiate(currentObject, m_ObstacleSpawnPos, currentObject.transform.rotation);
@@ -33,7 +42,7 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(4);
 
         //Spawn 3 buckets
-        m_InstructionText.text = "Press Spacebar twice \r\nto double jump";
+        m_InstructionText.text = instruction2;
         currentObject = m_Obstacles[1].gameObject;
         Instantiate(currentObject, m_ObstacleSpawnPos, currentObject.transform.rotation);
 

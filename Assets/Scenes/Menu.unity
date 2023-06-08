@@ -642,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BestScoreText: {fileID: 417421497}
+  m_InstructionText: {fileID: 1416752838}
   m_ExitButton: {fileID: 1215586366}
 --- !u!1 &832575517
 GameObject:
@@ -1079,7 +1080,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press Play or Spacebar \nto start the game"
+  m_text: 'Press Play button
+
+    to start the game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c378de041aa5beb47aa716e440dbba8a, type: 2}
   m_sharedMaterial: {fileID: -3052953627042303481, guid: c378de041aa5beb47aa716e440dbba8a,
