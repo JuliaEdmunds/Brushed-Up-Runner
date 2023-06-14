@@ -215,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123168881}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -249,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 158373454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1417683931}
@@ -301,7 +301,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -314,13 +314,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158373454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.95
 --- !u!1 &193416108
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193416108}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -511,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221242802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2815, y: 0, z: 0}
+  m_LocalPosition: {x: 4.04, y: 0, z: 0}
   m_LocalScale: {x: 4.2, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -543,9 +543,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296575460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1417683931}
@@ -584,8 +584,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 38.379486, y: 10.754521, z: 0}
-  m_Center: {x: 4.166252, y: 5.173801, z: 2.11}
+  m_Size: {x: 38.333397, y: 10.851684, z: 0}
+  m_Center: {x: 0, y: 5.004951, z: 2.11}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 16.754025
+  field of view: 14.369232
   orthographic: 0
   orthographic size: 5.338706
   m_Depth: -1
@@ -664,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.01090805, y: 0, z: 0, w: 0.9999405}
-  m_LocalPosition: {x: -5.95, y: 4.77, z: -26.89}
+  m_LocalPosition: {x: -11.05, y: 4.34, z: -26.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1047,13 +1047,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453417916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.8
 --- !u!1 &508586972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,13 +1146,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508586972}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 0.8
+  m_SpeedMultiplier: 0.85
 --- !u!1 &520324052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573466896}
+  - component: {fileID: 573466897}
   m_Layer: 0
   m_Name: Spiky Desert
   m_TagString: Untagged
@@ -1279,9 +1280,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573466895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6, y: 5.18, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 5.04, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 800819602}
   - {fileID: 508586973}
@@ -1291,6 +1292,20 @@ Transform:
   m_Father: {fileID: 296575461}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573466897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573466895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BackgroundController: {fileID: 296575462}
+  m_SpeedMultiplier: 1
 --- !u!1 &691618189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,7 +1536,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729075076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -1620,13 +1635,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800819601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.8
 --- !u!1 &821638929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,6 +2648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1079807487}
+  - component: {fileID: 1079807488}
   m_Layer: 0
   m_Name: Dune Desert
   m_TagString: Untagged
@@ -2648,9 +2664,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079807485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6, y: 5.18, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 5.04, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1153891395}
   - {fileID: 1878782154}
@@ -2660,6 +2676,20 @@ Transform:
   m_Father: {fileID: 296575461}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079807488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079807485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BackgroundController: {fileID: 296575462}
+  m_SpeedMultiplier: 1
 --- !u!1 &1153891394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,13 +2782,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153891394}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.8
 --- !u!1 &1220805550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,7 +2881,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220805550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -2950,13 +2980,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259024380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.95
 --- !u!1 &1271247390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,7 +3014,7 @@ Transform:
   m_GameObject: {fileID: 1271247390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1417683931}
@@ -3036,7 +3066,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3049,13 +3079,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271247390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.8
 --- !u!1 &1273806636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,13 +3178,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273806636}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.95
 --- !u!1 &1322423873
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,7 +3212,7 @@ Transform:
   m_GameObject: {fileID: 1322423873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1417683931}
@@ -3234,7 +3264,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3247,13 +3277,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322423873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 0.8
+  m_SpeedMultiplier: 0.85
 --- !u!1 &1363901561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,6 +3361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1417683931}
+  - component: {fileID: 1417683932}
   m_Layer: 0
   m_Name: Brown Desert
   m_TagString: Untagged
@@ -3346,9 +3377,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417683930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6, y: 5.18, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 5.04, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1271247391}
   - {fileID: 1322423874}
@@ -3358,6 +3389,20 @@ Transform:
   m_Father: {fileID: 296575461}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1417683932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417683930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BackgroundController: {fileID: 296575462}
+  m_SpeedMultiplier: 1
 --- !u!1 &1456026238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,7 +3430,7 @@ Transform:
   m_GameObject: {fileID: 1456026238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1417683931}
@@ -3437,7 +3482,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3450,7 +3495,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456026238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -3538,7 +3583,7 @@ PrefabInstance:
     - target: {fileID: 3749259818121746228, guid: b30885aa89c00c149b55461babd8ff22,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -12.74
       objectReference: {fileID: 0}
     - target: {fileID: 3749259818121746228, guid: b30885aa89c00c149b55461babd8ff22,
         type: 3}
@@ -3590,6 +3635,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.55
       objectReference: {fileID: 0}
+    - target: {fileID: 9195981385841095011, guid: b30885aa89c00c149b55461babd8ff22,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30885aa89c00c149b55461babd8ff22, type: 3}
 --- !u!1 &1517027114
@@ -3619,7 +3669,7 @@ Transform:
   m_GameObject: {fileID: 1517027114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1417683931}
@@ -3671,7 +3721,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 19.2, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3684,7 +3734,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517027114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -3700,6 +3750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1564734405}
+  - component: {fileID: 1564734406}
   m_Layer: 0
   m_Name: Cactus Desert
   m_TagString: Untagged
@@ -3715,9 +3766,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564734404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6, y: 5.18, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 5.04, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 453417917}
   - {fileID: 1941389080}
@@ -3727,6 +3778,20 @@ Transform:
   m_Father: {fileID: 296575461}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564734406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564734404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BackgroundController: {fileID: 296575462}
+  m_SpeedMultiplier: 1
 --- !u!1 &1667833843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,7 +3884,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667833843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -3918,7 +3983,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707370736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
@@ -4017,13 +4082,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764937803}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 1
+  m_SpeedMultiplier: 0.95
 --- !u!1 &1788424992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,13 +4395,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878782153}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 0.8
+  m_SpeedMultiplier: 0.85
 --- !u!1 &1927828803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,10 +4526,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941389079}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6187af08276978a4e8d0a413d6b2ee88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackgroundController: {fileID: 296575462}
-  m_SpeedMultiplier: 0.8
+  m_SpeedMultiplier: 0.85

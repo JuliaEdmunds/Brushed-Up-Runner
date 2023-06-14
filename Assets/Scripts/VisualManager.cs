@@ -21,17 +21,26 @@ public class VisualManager : MonoBehaviour
 
     private float m_GameTimer = 0;
 
+    private int m_LastKnownScore = -1;
+
     private void Start()
     {
         Time.timeScale = m_StartTimeScale;
-        PlayerController.Instance.OnGameOver += OnGameOver;
+        PlayerController.Instance.OnGameOver += OnGameOver; 
+        
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
 
     private void Update()
     {
         m_GameTimer += Time.unscaledDeltaTime;
 
-        m_ScoreText.text = $"Score: {PlayerController.Instance.Score}";
+        if (m_LastKnownScore != PlayerController.Instance.Score)
+        {
+            m_LastKnownScore = PlayerController.Instance.Score;
+            m_ScoreText.text = $"Score: {m_LastKnownScore}";
+        }
 
         if (PlayerController.Instance.IsGameOver)
         {
@@ -40,7 +49,7 @@ public class VisualManager : MonoBehaviour
             if (m_GameOverTimer > 1.5f && Input.GetKeyDown(KeyCode.Space))
             {
                 Replay();
-            }            
+            }
         }
 
         if (m_GameTimer < m_StartTimeToIncrease)

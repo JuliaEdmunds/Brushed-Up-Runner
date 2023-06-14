@@ -13,14 +13,14 @@ public class ObjectController : MonoBehaviour
         // Keep scrolling endlessly
         if (!PlayerController.Instance.IsGameOver)
         {
-            Vector3 deltaOffset = m_Speed * Time.deltaTime * Vector3.left;
+            Vector3 deltaOffset = m_Speed * Time.unscaledDeltaTime * Vector3.left;
             transform.position += deltaOffset;
 
             // If it's a brush then keep rotating it
             if (m_ObjectType.SpawnObjectType == ESpawnObjectType.Brush)
             {
                 float degreesPerSecond = 30;
-                transform.Rotate(new Vector3(0, degreesPerSecond, 0) * Time.deltaTime);
+                transform.Rotate(new Vector3(0, degreesPerSecond, 0) * Time.unscaledDeltaTime);
             }
 
             // Destroy the obstacle when out of sight

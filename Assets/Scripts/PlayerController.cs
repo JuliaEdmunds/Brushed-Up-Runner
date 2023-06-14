@@ -82,11 +82,13 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator UpdateScore()
     {
-        yield return new WaitForSeconds(1);
+        WaitForSeconds waitTime = new WaitForSeconds(1f);
 
-        Score += 1;
-
-        yield return UpdateScore();
+        while (true)
+        {
+            yield return waitTime;
+            Score += 1;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
