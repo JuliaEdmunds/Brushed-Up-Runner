@@ -18,4 +18,3 @@ public class SplashController : MonoBehaviour
         SceneManager.LoadScene(MENU_SCENE);
     }
 }
-

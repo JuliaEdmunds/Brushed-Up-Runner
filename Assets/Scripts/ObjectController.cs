@@ -4,8 +4,8 @@ public class ObjectController : MonoBehaviour
 {
     [SerializeField] private ObjectType m_ObjectType;
 
-    private float m_Speed = 7.5f;
-    private float m_XBound = -20f;
+    private const float SPEED = 7.5f;
+    private const float X_BOUND = -20f;
 
 
     void Update()
@@ -13,7 +13,7 @@ public class ObjectController : MonoBehaviour
         // Keep scrolling endlessly
         if (!PlayerController.Instance.IsGameOver)
         {
-            Vector3 deltaOffset = m_Speed * Time.unscaledDeltaTime * Vector3.left;
+            Vector3 deltaOffset = SPEED * Time.unscaledDeltaTime * Vector3.left;
             transform.position += deltaOffset;
 
             // If it's a brush then keep rotating it
@@ -24,7 +24,7 @@ public class ObjectController : MonoBehaviour
             }
 
             // Destroy the obstacle when out of sight
-            if (transform.position.x < m_XBound)
+            if (transform.position.x < X_BOUND)
             {
                 Destroy(gameObject);
             }

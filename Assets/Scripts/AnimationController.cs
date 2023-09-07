@@ -14,4 +14,3 @@ public class AnimationController : MonoBehaviour
         m_Animator.SetBool("IsDead", true);
     }
 }
-

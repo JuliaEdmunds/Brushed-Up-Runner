@@ -5,6 +5,7 @@ public class BackgroundController : MonoBehaviour
 {
     [SerializeField] private BoxCollider m_BoxCollider;
     public BoxCollider BackgroundCollider => m_BoxCollider;
+
     [SerializeField] private List<GameObject> m_AllBackgrounds;
 
     private GameObject m_CurrentBackground;

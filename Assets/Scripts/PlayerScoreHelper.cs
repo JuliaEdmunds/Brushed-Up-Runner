@@ -19,4 +19,3 @@ public static class PlayerScoreHelper
         PlayerPrefs.SetInt(SCORE_PREF_KEY, score);
     }
 }
-

@@ -6,4 +6,3 @@ public enum ESpawnObjectType
     Obstacle,
     Brush
 }
-

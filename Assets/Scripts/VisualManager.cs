@@ -18,9 +18,7 @@ public class VisualManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_GameOverScoreText;
 
     private float m_GameOverTimer = 0;
-
     private float m_GameTimer = 0;
-
     private int m_LastKnownScore = -1;
 
     private void Start()
@@ -93,4 +91,3 @@ public class VisualManager : MonoBehaviour
         SceneManager.LoadScene(MENU_SCENE);
     }
 }
-
